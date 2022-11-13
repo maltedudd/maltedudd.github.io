@@ -1,4 +1,4 @@
-baseURL = "https://dkmuzqxkjudta.cloudfront.net"
+baseURL = "https://dkmuzqxkjudta.cloudfront.net/"
 title = "malte-dudd.de | einfachentwickeln"
 paginate = 5
 theme = "PaperMod"
