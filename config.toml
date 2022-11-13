@@ -1,0 +1,163 @@
+baseURL = "https://maltedudd.github.io"
+title = "malte-dudd.de | #einfachentwickeln"
+paginate = 5
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+googleAnalytics = "UA-123-45"
+pygmentsUseClasses = true
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "production"
+title = "malte-dudd.de"
+description = "ExampleSite description"
+keywords = [ "Blog", "Portfolio", "PaperMod" ]
+author = "Me"
+images = [ "<link or path of image for opengraph, twitter-cards>" ]
+DateFormat = "02.01.2006"
+defaultTheme = "light"
+disableThemeToggle = true
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = false
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
+hideFooter = true
+
+  [params.assets]
+  favicon = "<link / abs url>"
+  favicon16x16 = "<link / abs url>"
+  favicon32x32 = "<link / abs url>"
+  apple_touch_icon = "<link / abs url>"
+  safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+  text = "malte-dudd.de"
+  icon = "/apple-touch-icon.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = true
+  title = "Moin, ich bin Malte."
+  subtitle = "Ich helfe euch dabei, digitale Strategien zu entwickeln, die agil in bezahlbaren, zeitgemäßen und zukunftssicheren Produkten münden.  Dabei lege ich großen Wert auf barrierefreie Entwicklungsstrategien und passende Workflows."
+  imageUrl = "/img/IMG_1095-2-540x540.jpeg"
+  imageWidth = 240
+  imageHeight = 240
+  imageTitle = "my image"
+
+    [[params.profileMode.buttons]]
+    name = "Posts"
+    url = "posts"
+
+    [[params.profileMode.buttons]]
+    name = "Tags"
+    url = "tags"
+
+  [params.homeInfoParams]
+  Title = "Hi there 👋"
+  Content = "Welcome to my blog"
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/"
+
+  [[params.socialIcons]]
+  name = "stackoverflow"
+  url = "https://stackoverflow.com"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.yandex]
+SiteVerificationTag = "XYZabc"
+
+  [params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = true
+
+  [params.editPost]
+  URL = "https://github.com/<path_to_repo>/content"
+  Text = "Suggest Changes"
+  appendFilePath = true
+
+  [params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1_000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = [ "title", "permalink", "summary", "content" ]
+
+[[menu.main]]
+identifier = "categories"
+name = "categories"
+url = "/categories/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "jipido"
+name = "Mit mir arbeiten"
+url = "https://jipido.de"
+weight = 30
+
+[markup.highlight]
+noClasses = false
+
+
+[deployment]
+  [[deployment.targets]]
+    name = "aws-s3"
+    URL = "s3://malte-dudd.de?region=eu-central-1"
+
+  [[deployment.matchers]]
+    pattern = "^sitemap\\.xml$"
+    cacheControl = "public, s-maxage=604800, max-age=86400" #7d,1d
+    contentType = "application/xml"
+
+  [[deployment.matchers]]
+    pattern = "^.+\\.(css|js)$"
+    cacheControl = "public, immutable, max-age=31536000" #1y
+
+  [[deployment.matchers]]
+    pattern = "(?i)^.+_hu[0-9a-f]{32}_.+\\.(jpg|jpeg|gif|png|webp)$"
+    cacheControl = "public, immutable, max-age=31536000" #1y
+
+  [[deployment.matchers]]
+    pattern = "(?i)^.+\\.(jpg|jpeg|gif|png|webp|mp4|woff|woff2)$"
+    cacheControl = "public, s-maxage=7776000, max-age=604800" #90d,7d
+
+  [[deployment.matchers]]
+    pattern = "^.+\\.(html|xml|json|txt)$"
+    cacheControl = "public, s-maxage=604800, max-age=3600" #7d,1h
+
