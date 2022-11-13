@@ -139,6 +139,7 @@ noClasses = false
   [[deployment.targets]]
     name = "aws-s3"
     URL = "s3://malte-dudd.de?region=eu-central-1"
+    cloudFrontDistributionID = "E2YWSDKM12GGMF"
 
   [[deployment.matchers]]
     pattern = "^sitemap\\.xml$"
